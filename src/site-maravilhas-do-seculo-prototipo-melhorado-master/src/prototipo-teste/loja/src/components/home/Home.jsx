@@ -75,7 +75,7 @@ export default class Home extends Component {
 
         /**variáveis de validação */
         const emailEntrada = this.state.email
-    const emailMask = ''  //regex expressão regular 
+    const emailMask = 'leleu@gmail.com'  //regex expressão regular 
 
         if(this.state.email === ''|| emailEntrada !== emailMask ){
             this.setState({emailError:true})
