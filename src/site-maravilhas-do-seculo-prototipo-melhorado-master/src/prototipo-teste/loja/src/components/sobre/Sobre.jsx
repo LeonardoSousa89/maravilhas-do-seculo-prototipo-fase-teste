@@ -35,16 +35,14 @@ export default class Sobre extends Component {
                         </p>
                         <ul className="componentMissaoVisaoValores">
                             <ul><h4>Missão:</h4>
-                                <p>asdasfasfasf
-                                adsdadasdasdasads
-                                asdasdasdasdasda
-                                asdasdasdasasd </p>
+                                <p>Levar ao público um
+                                produto de melhoria e concepção de saúde mais agradável!</p>
                             </ul>
                             <ul><h4>Visão:</h4>
-                                <p>asdasfasfasfasdsfasfasfdasfasfasfa</p>
+                                <p>satisfazendo as necessidades de nossos clientes com a melhor qualidade!</p>
                             </ul>
                             <ul><h4>Valores:</h4>
-                                <p>asdffasfasascsasfvsafascasasfasdrwreqtg</p>
+                                <p>responsabilidade,compromentimento e eficiência em nossos serviços!</p>
                             </ul>
                         </ul>
 
@@ -55,17 +53,17 @@ export default class Sobre extends Component {
                    <span className="componentcardSobreComment1">
                         <img className="componentImgSobreComment1" src={Perfil}/>
                         <p className="comnponentComentaries1">nome do cliente</p>
-                        <p className="comnponentComentariesCliente1">comentário</p>
+                        <p className="comnponentComentariesCliente1">&#10077;comentário&#10078;</p>
                    </span>
                    <span className="componentcardSobreComment2">
                         <img className="componentImgSobreComment12" src={Perfil}/>
                         <p className="comnponentComentaries2">nome do cliente</p>
-                        <p className="comnponentComentariesCliente2">comentário</p>
+                        <p className="comnponentComentariesCliente2">&#10077;comentário&#10078;</p>
                    </span>
                    <span className="componentcardSobreComment3">
                         <img className="componentImgSobreComment3" src={Perfil}/>
                         <p className="comnponentComentaries3">nome do cliente</p>
-                        <p className="comnponentComentariesCliente3">comentário</p>
+                        <p className="comnponentComentariesCliente3">&#10077;comentário&#10078;</p>
                    </span>
                </div>
 
@@ -79,7 +77,7 @@ export default class Sobre extends Component {
                         <strong className="componentSobreZapText"> Contato(Tel): (xx)xxxxx-xxxx</strong>
 
                         <img className="componentImgSobreMail" src={Mail}/> 
-                        <strong className="componentSobreMailText"> Email:   java@eu.com</strong>
+                        <strong className="componentSobreMailText"> Email:   javan@eu.com</strong>
                         </div>
 
 

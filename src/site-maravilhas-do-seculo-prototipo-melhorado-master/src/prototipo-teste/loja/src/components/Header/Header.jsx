@@ -53,10 +53,10 @@ export default class Header extends Component   {
                                  onClick={()=>this.setState({icon:false})} /> 
                             </div>
                             <ul className="componentPages"> 
-                                <ul className="componentLinkHome"> <Link className="LinkHome" to="/"><h3>Home</h3></Link></ul>
-                                <ul className="componentLinkFormulario"> <Link className="LinkFaleConosco" to="/fale-conosco"><h3>Fale conosco</h3></Link></ul>
-                                <ul className="componentLinkSobre">    <Link className="LinkSobre" to="/sobre"><h3>Sobre</h3></Link></ul>
-                                <ul className="componentLinkLoja"> <a className="LinkLoja" href="https://www.timol.com.br/prodLista.aspx" target="_blank"><h3>Loja</h3></a></ul>
+                                <ul className="componentLinkHome"> <Link className="LinkHome" to="/"><h3  onClick={()=>this.setState({icon:false})}>Home</h3></Link></ul>
+                                <ul className="componentLinkFormulario"> <Link className="LinkFaleConosco" to="/fale-conosco"><h3 onClick={()=>this.setState({icon:false})}>Fale conosco</h3></Link></ul>
+                                <ul className="componentLinkSobre">    <Link className="LinkSobre" to="/sobre"><h3 onClick={()=>this.setState({icon:false})}>Sobre</h3></Link></ul>
+                                <ul className="componentLinkLoja"> <a className="LinkLoja" href="https://www.timol.com.br/prodLista.aspx" target="_blank"><h3 onClick={()=>this.setState({icon:false})}>Loja</h3></a></ul>
                             </ul>
                         </nav> 
                     )

@@ -60,24 +60,38 @@ export default class Home extends Component {
                 showGalleryFullscreenButton: false,
                 showVideo: {},
                 nome:'',
-                email:''
+                email:'',
+                emailError:false
         }
 
 
         this.enviar = this.enviar.bind(this)
     }
 
+    
     enviar = (e) =>{
         let clientes = firebase.database().ref('clientes')
         let chave    = clientes.push().key
 
-        clientes.child(chave).set({
-            nome:this.state.nome,
-            email:this.state.email
-        })
-        
-        this.limpar()
-        e.preventDefault()
+        /**variáveis de validação */
+        const emailEntrada = this.state.email
+    const emailMask = ''  //regex expressão regular 
+
+        if(this.state.email === ''|| emailEntrada !== emailMask ){
+            this.setState({emailError:true})
+
+            this.limpar()
+            e.preventDefault()
+        }
+        else{
+            clientes.child(chave).set({
+                nome:this.state.nome,
+                email:this.state.email
+            })
+            
+            this.limpar()
+            e.preventDefault()
+        }
     }
    
     limpar = () =>{
@@ -176,10 +190,18 @@ export default class Home extends Component {
                                             </div>
                                             <div className="componentHomeEmail">
                                                 <img className="componentImgHomeEmail" src={Mail} />
-                                                <input type="email" className="componentInputHomeEmail" value={this.state.email} onChange={(email) => this.setState({email:email.target.value})} placeholder="insira seu Email:  * "/>
+                                                <input type="email" className="componentInputHomeEmail" value={this.state.email} onChange={(email) => this.setState({email:email.target.value})} placeholder="insira seu Email:  * " onMouseEnter={() => this.setState({emailError:false})}/>
                                                 <button className="componentButonHomeEmail" onClick={this.enviar}>enviar</button>
                                             </div> 
                                             <p className="componentObligation">campo obrigatório *</p>
+                                            {
+
+                                                    this.state.emailError === false ? 
+                                                    ( '' )
+                                                    :
+                                                    (<p id="error" value={this.state.emailError} >insira um email válido!  | o email deve estar preenchido!</p>)
+
+                                            }
 
                                                 <p className="componentHomePromocionalTextArgumentation"> 
                                                 <strong>Receba um pdf Educativo!</strong> <hr/>
@@ -210,7 +232,15 @@ export default class Home extends Component {
                                    <br/><br/><br/>
                                    <p className="componentObligation">campo obrigatório *</p>
                                     <input className="componentHomeInputLittleDeviceName"  type="text" value={this.state.nome}  onChange={(nome)  => this.setState({nome:nome.target.value})}    placeholder="insira seu nome:"/>
-                                    <input className="componentHomeInputLittleDeviceEmail" type="text" value={this.state.email} onChange={(email) => this.setState({email:email.target.value})}  placeholder="insira seu email *:"/>
+                                    <input className="componentHomeInputLittleDeviceEmail" type="text" value={this.state.email} onChange={(email) => this.setState({email:email.target.value})}  placeholder="insira seu email *:"  onMouseEnter={() => this.setState({emailError:false})}/>
+                                    {
+
+                                    this.state.emailError === false ? 
+                                    ( '' )
+                                    :
+                                    (<p id="error" value={this.state.emailError} >insira um email válido! | o email deve estar preenchido!</p>)
+
+                                    }
                                     <button className="componentButtonFooterLittleDeviceEnviar" onClick={this.enviar}>enviar</button>
                                  
 
