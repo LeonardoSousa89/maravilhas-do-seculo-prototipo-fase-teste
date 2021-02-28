@@ -64,7 +64,6 @@ export default class Home extends Component {
                 emailError:false
         }
 
-
         this.enviar = this.enviar.bind(this)
     }
 
@@ -75,9 +74,9 @@ export default class Home extends Component {
 
         /**variáveis de validação */
         const emailEntrada = this.state.email
-    const emailMask = /leleu@gmail.com/  //regex expressão regular 
+        const emailMaskgmail = /@gmail.com/gi  //regex expressão regular 
 
-        if(this.state.email === ''|| emailEntrada.search(emailMask)){
+        if(this.state.email === ''|| emailEntrada.search(emailMaskgmail)){
             this.setState({emailError:true})
 
             this.limpar()
@@ -94,6 +93,7 @@ export default class Home extends Component {
         }
     }
    
+
     limpar = () =>{
         this.setState({
             nome:'',
